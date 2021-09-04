@@ -1,0 +1,86 @@
+/* --===google fonts===-- */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@0,300;1,300&display=swap");
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ text-decoration: none;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+:root {
+    --primary: #c8a97e;
+    --secondary: #666620;
+    --neutral: #000;
+  }
+
+/* navbar styling */
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 30px 0;
+    background: var(--primary);
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: var(--neutral);
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: var(--secondary);
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block
+}
+.navbar .menu li a{
+    color: var(--neutral);
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: var(--secondary);
+
+}
+
+/*  home section start */
+.home{
+    display: flex;
+    background: var(--neutral); /*insert image (no-repeat center)*/
+    height: 100vh;
+    color: var(--primary);
+    min-height: 500px;
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: 0px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: var(--secondary);
+    font-weight: 500;
+}
