@@ -17,35 +17,47 @@
     --primary: #c8a97e;
     --secondary: #666620;
     --neutral: #000;
+    --void:#fff;
   }
 
 /* navbar styling */
 .navbar {
     position: fixed;
     width: 100%;
+    /* height: 102px; */
     padding: 30px 0;
-    background: var(--primary);
-    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* background: var(--secondary); */
+    font-family: 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
+    transition: all 0.3s ease;
 }
+.navbar.sticky{
+    padding: 15px 0;
+    background: var(--primary);
+}    
 .navbar .max-width{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .navbar .logo a{
-    color: var(--neutral);
+    color: var(--primary);
     font-size: 35px;
     font-weight: 600;
 }
 .navbar .logo a span{
     color: var(--secondary);
+    transition: all 0.3s ease;
 }
 .navbar .menu li{
     list-style: none;
-    display: inline-block
+    display: inline-block;
+}
+.navbar.sticky .menu li a,
+.navbar.sticky .logo a{
+    color: var(--neutral);
 }
 .navbar .menu li a{
-    color: var(--neutral);
+    color: var(--primary);
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
@@ -53,7 +65,9 @@
 }
 .navbar .menu li a:hover{
     color: var(--secondary);
-
+}
+.navbar.sticky .menu li a:hover{
+    color: var(--void);
 }
 
 /*  home section start */
@@ -62,7 +76,7 @@
     background: var(--neutral); /*insert image (no-repeat center)*/
     height: 100vh;
     color: var(--primary);
-    min-height: 500px;
+    min-height: 800px;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .home .max-width{
@@ -72,7 +86,7 @@
     font-size: 27px;
 }
 .home .home-content .text-2{
-    font-size: 75px;
+    font-size: 70px;
     font-weight: 600;
     margin-left: 0px;
 }
