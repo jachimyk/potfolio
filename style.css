@@ -7,19 +7,22 @@
  box-sizing: border-box;
  text-decoration: none;
 }
+html {
+    scroll-behavior: smooth;
+    /* scroll-padding-top: 50px; */
+}
 .max-width{
     max-width: 1300px;
     padding: 0 80px;
     margin: auto;
 }
-
 :root {
     --primary: #c8a97e;
     --secondary: #666620;
     --neutral: #000;
     --void:#fff;
     --astra: #353434;
-  }
+}
 
 /* navbar styling */
 .navbar {
@@ -73,7 +76,7 @@
 
 /* menu btn styling */
 .menu-btn{
-    color: var(--primary) !important;
+    color: var(--secondary);
     font-size: 23px;
     cursor: pointer;
     display: none;
@@ -125,14 +128,23 @@
     border: 2px solid var(--secondary);
 }
 
-/* about section styling */
+
+/* all similar content styling code */
 section{
     padding: 100px 0;
 }
-.about{
+.about, .services, .skills, .teams{
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.about .title{
+.about .about-content,
+.services .serv-content,
+.skills .skills-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
     position: relative;
     text-align: center;
     font-size: 40px;
@@ -141,7 +153,7 @@ section{
     padding-bottom: 20px;
     font-family: 'Segoe UI', Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.about .title::before{
+section .title::before{
     content: "";
     position: absolute;
     bottom: 0px;
@@ -151,8 +163,7 @@ section{
     background: var(--neutral);
     transform: translateX(-50%);
 }
-.about .title::after{
-    content: "who i am";
+section .title::after{
     position: absolute;
     bottom: -12px;
     left: 50%;
@@ -162,11 +173,12 @@ section{
     background: var(--void);
     transform: translateX(-50%);
 }
-.about .about-content{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+
+
+/* about section styling */
+.about .title::after{
+    content: "Who i am";
+
 }
 .about .about-content .left{
     width: 45%;
@@ -177,7 +189,6 @@ section{
     object-fit: cover no-repeat;
     border-radius: 6px;
     border: 2px solid var(--void);
-
 }
 .about .about-content .right{
     width: 55%;
@@ -210,6 +221,225 @@ section{
     background: none;
 }
 
+/* sevices section styling */
+.services{
+    color: var(--secondary);
+    background: var(--neutral);
+}
+.services .title{
+    padding: 25px;
+    color: var(--secondary);
+}
+.services .title::before{
+    background: var(--secondary);
+}
+.services .title::after{
+    background: var(--neutral);
+    content: "What i provide";
+}
+.services .serv-content .card{
+    width: calc(33% - 20px);
+    background: var(--astra);
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+}
+.services .serv-content .card:hover{
+    background: var(--secondary);
+}
+.services .serv-content .card .box{
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover .box{
+    transform: scale(1.05);
+}
+.services .serv-content .card i{
+    font-size: 50px;
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+.services .serv-content .card:hover i{
+    color: var(--neutral);
+}
+.services .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: var(--secondary);
+}
+.services .serv-content .card:hover .text{
+    color: var(--astra);
+}
+.services .serv-content .card p{
+    color: var(--primary);
+    text-align: justify;
+}
+.services .serv-content .card:hover p{
+    color: var(--neutral);
+    font-weight: 400;
+}
+
+/* skills section styling */
+.skills .title{
+    padding: 25px;
+}
+.skills .title::after{
+    content: "What i know";
+}
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.skills .skills-content .left p{
+    text-align: justify;
+}
+.skills .skills-content .left a{
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--neutral);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--secondary);
+    transition: all 0.3s ease;
+}
+.skills .skills-content .left a:hover{
+    color: var(--secondary);
+    background: none;
+}
+.skills .skills-content .right .bars{
+    margin-bottom: 15px;
+}
+.skills .skills-content .right .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skills-content .right .span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.skills .skills-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: var(--astra);
+    position: relative;
+}
+.skills .skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: crimson;
+}
+.skills-content .right .html::before{
+    width: 90%;
+}
+.skills-content .right .css::before{
+    width: 70%;
+}
+.skills-content .right .bootstrap::before{
+    width: 60%;
+}
+.skills-content .right .js::before{
+    width: 40%;
+}
+.skills-content .right .mysql::before{
+    width: 20%;
+}
+
+/* teams section styling */
+.teams{
+    color: var(--secondary);
+    background: var(--neutral);
+}
+.teams .title{
+    padding: 25px;
+}
+.teams .title::before{
+    background: var(--secondary);
+}    
+.teams .title::after{
+    background: var(--neutral);
+    content: "Who is with me";
+    color: var(--primary);
+}
+.teams .carousel .card{
+    background: var(--astra);
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover{
+    background: var(--secondary);
+}
+.teams .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover .box{
+    transform: scale(1.05);
+}
+.teams .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: var(--primary);
+    font-family: Blink 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.teams .carousel .card:hover .text, 
+.teams .carousel .card:hover p{
+    color: var(--neutral);
+}
+.teams .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border: 5px solid var(--secondary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover img{
+    border-color: var(--neutral);
+}
+.teams .carousel .card p{
+    color: var(--primary);
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none !important;
+    border-radius: 50%;
+    border: 2px solid var(--primary) !important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: var(--void) !important;
+}
+
 /* responsive media query start */
 @media (max-width: 1300px){
     .home .max-width{
@@ -235,7 +465,7 @@ section{
     .menu-btn{
         display: block;
         z-index: 999;
-        color: var(--primary) !important;
+        color: var(--neutral) !important;
     }
     .menu-btn i.active:before{
         content: "\f00d";
@@ -289,6 +519,14 @@ section{
     .about .about-content .right{
         flex: 100%;
     }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .skills-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
 }
 
 @media (max-width: 690px){
@@ -304,6 +542,10 @@ section{
     .home .home-content a{
         font-size: 20px;
         /* padding: 9px 24px; */
+    }
+    .services .serv-content .card,
+    .skills .skills-content .column{
+        width: 100%;
     }
 }
 
