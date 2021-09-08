@@ -1,9 +1,9 @@
 $(document).ready(function (){
     $(window).scroll(function (){
          if(this.scrollY > 20){
-             $('.navbar').addClass('sticky');
+             $('.navbar').addClass("sticky");
          }else{
-            $('.navbar').removeClass('sticky');
+            $('.navbar').removeClass("sticky");
         }
     });
 
@@ -13,6 +13,22 @@ $(document).ready(function (){
         $('.menu-btn i').toggleClass('active');
 
     });
+
+    // typing animation script
+    var typed = new Typed(".typing", {
+        strings: ["Developer", "Programmer", "Web App Developer", "Photographer"],
+        typeSpeed: 100,
+        backSpedd: 60,
+        loop: true
+    });
+
+    var typed = new Typed(".typing-2", {
+        strings: ["Developer", "Programmer", "Web App Developer", "Photographer"],
+        typeSpeed: 100,
+        backSpedd: 60,
+        loop: true
+    });
+
 
     // owl carousel script
     $('.carousel').owlCarousel({
