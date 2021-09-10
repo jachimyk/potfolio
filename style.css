@@ -309,6 +309,7 @@ section .title::after{
 .services .serv-content .card p{
     color: var(--primary);
     text-align: justify;
+    word-spacing: 2px !important;
 }
 .services .serv-content .card:hover p{
     color: var(--neutral);
@@ -596,23 +597,6 @@ footer span a:hover{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* responsive media query start */
 @media (max-width: 1300px){
     .home .max-width{
@@ -740,3 +724,4 @@ footer span a:hover{
         font-size: 27px;
     }
 }
+
